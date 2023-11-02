@@ -9,7 +9,7 @@ const connectDB = async (DATABASE_URL, DATABASE) => {
         }
 
         mongoose.set("strictQuery", false);
-        await mongoose.connect(DATABASE_URL, DB_OPTIONS);
+        await mongoose.connect('mongodb+srv://main:ummFR5ZdzhmuhuLa@cluster0.wgl5vnx.mongodb.net/?retryWrites=true&w=majority', DB_OPTIONS);
 
         let adminExisting = await User.find({ role: 'admin' });
         if (adminExisting.length <= 0) {
